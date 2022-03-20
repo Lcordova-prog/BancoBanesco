@@ -7,13 +7,15 @@ public class Nodo {
   Nodo siguiente;
   int deposito1;
   int cliente;
+  String nombre;
 
-     Nodo(int fila, int deposi) {
+     Nodo(int fila, int deposito, String nombre) {
         this.fila = fila;
-       
+        this.nombre = nombre;
+   
     }
 
-    public Nodo(int deposito1) {
+    Nodo(int deposito1) {
         this.deposito1 = deposito1;
     }
 
