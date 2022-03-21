@@ -6,6 +6,8 @@ public class Pila {
     private Nodo depo;
     int tamano = 0;
     String lista = "";
+    int Luz = 20;
+    int agua = 10;
     
     
     Pila (){
@@ -20,6 +22,7 @@ public class Pila {
             return false;
         }
     }
+    
     
      public void deposito(int deposito){
       Nodo depo = new Nodo(deposito);
@@ -45,7 +48,7 @@ public class Pila {
                
       }
       
-      depo = a;
+      depo = a ;
       return api;
   }
       public int retiro(){
@@ -56,4 +59,13 @@ public class Pila {
 return aux;
 
       }
+      
+            
+  public int cima(){
+      return depo.deposito1-20;
+  }
+  
+  
+      
+      
 }

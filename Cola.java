@@ -10,7 +10,6 @@ import java.util.Date;
 public class Cola {
   Nodo frente;
   Nodo atras;
-  int retiro, deposito,consulta, libreta, pagoServicio, cliente;
   String cola = "";
   
  
@@ -19,13 +18,6 @@ public class Cola {
      return frente == null;
   }
   
-  boolean SinSaldo(){
-      if (deposito == 0) {
-          return true;
-      } else {
-          return false;
-      }
-  }
   
   public void taquilla(int fila, String nombre) throws IOException{
        SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
@@ -54,7 +46,7 @@ public class Cola {
             fw.flush();
             int valor = fr.read();
             while(valor !=-1){
-                System.out.println((char)valor);
+               
                 valor = fr.read();
             }
         }catch(IOException e){
@@ -85,16 +77,26 @@ public class Cola {
         }
         System.out.println(ColaInvertida);
         cola = "";
-        
-  
-  
-  
-
  }
+ 
    public int SalirBanco(){
+       Nodo aux2 = new Nodo();
       if (!vaciaCola()) {
+          Nodo aux1 = frente;
+          boolean x = false;
          int aux = frente.fila;
-          if (frente == atras) {
+          if (aux2 != null) {
+              if (aux1.fila >= 50) {
+                  aux2.siguiente = aux1.siguiente;
+                  x = true;
+                  
+                          
+              }
+              aux2 = aux1;
+              aux1 = aux1.siguiente;
+             
+                  
+              
               frente = null;
               atras = null;
         }else{
@@ -106,7 +108,28 @@ public class Cola {
       }else{
       return Integer.MAX_VALUE;
       }
+      
   }
+   
+   public void prioridad(){
+       Nodo aux2 = new Nodo();
+      Nodo aux1 = frente;
+      boolean x= false;
+      while(aux1 != null){
+          if (aux1.fila >= 50) {
+              aux2.siguiente = aux1.siguiente;
+              x = true;
+              
+              break;
+          }
+          aux2 = aux1;
+          aux1 = aux1.siguiente;
+      }
+       if (!x) {
+           this.SalirBanco();
+           
+       }
+   }
 
     void deposito() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

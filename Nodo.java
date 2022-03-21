@@ -8,8 +8,12 @@ public class Nodo {
   int deposito1;
   int cliente;
   String nombre;
+  
+  Nodo(){
+      
+  }
 
-     Nodo(int fila, int deposito, String nombre) {
+    public Nodo(int fila, int deposito, String nombre) {
         this.fila = fila;
         this.nombre = nombre;
    
@@ -18,6 +22,8 @@ public class Nodo {
     Nodo(int deposito1) {
         this.deposito1 = deposito1;
     }
+
+   
 
     
   

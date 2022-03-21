@@ -104,16 +104,52 @@ public class TaquillaMain {
                                   break;
                                   
                                   
+                              case 6:
+                                  int opcion3 =0;
+                                   int opcion4 = 0;   
+                                  int c;
+                                  do{
+                                      try{
+                                          System.out.println("1. Luz = 20$"); 
+                                         opcion3 = c  = leer.nextInt();
+                                      }catch(NumberFormatException a){
+                                          System.out.println("error");
+                                      }
+                                   
+
+                                 
+
+                                  
+                         switch(opcion3){
+                                  case 1:
+                                  int cantidad;
+                                  int Luz = 20;
+                                      if (!pila.vacioPila()) {
+                                     System.out.println("Pago exitoso!!. Saldo actual: "+pila.cima());                                    
+
+                                      }else{
+                                          System.out.println("No tienes dinero para pagar");
+                                      }
+                                 break;
+                              }
+                                   }while(opcion3 != 3);
+                                  break;
                               case 7:
-                                  cola.MostrarCola();
+                                  if(!cola.vaciaCola()){
+                              cola.MostrarCola();
+
+                                  }else{
+                                      System.out.println("Ya no hay personas");
+                                  }
                                   break;
                                   
                               case 8:
                                   atender = 0;
                                   if (!cola.vaciaCola()){
                          System.out.print("Se atendio al numero de cedula: "+cola.SalirBanco());
-                                      if (!cola.vaciaCola()) {
-                                         System.out.println(" Ahora sigue: "+cola.siguiente()); 
+                                     
+                         if (!cola.vaciaCola()) {
+                                         System.out.println(" Ahora se atiende: "+cola.siguiente()); 
                                       }
             
                          
