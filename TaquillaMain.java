@@ -39,7 +39,7 @@ public class TaquillaMain {
                    
                  case 1:
                      do{
-                         if (tiempo >= 15.30) {
+                         if (tiempo >= 450) {
                              System.out.println("Cierre del Banco");
                               
                                         try(
@@ -233,23 +233,26 @@ public class TaquillaMain {
                                                            
                                   }else{
                         System.out.println("No hay gente");
+                        
                                   }
+                                  
                                   break;
                                   
                                   case 9:
                                       cola.prioridad();
                        break;
+                       
                              
-                       }    
-                         }else{
-                          
+                       } 
+                       }else{
+                          atender = 0;
                            if (!cola.vaciaCola()){ 
-                                atender = 0;
                         System.out.println("Ya no puede hacer mas operaciones, Pase a la siguiente persona");
                            }
                               
                            }
                        
+                         
                          
                        
                        
