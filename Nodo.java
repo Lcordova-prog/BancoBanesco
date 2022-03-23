@@ -16,8 +16,10 @@ public class Nodo {
     public Nodo(int fila, int deposito, String nombre) {
         this.fila = fila;
         this.nombre = nombre;
+       
    
     }
+   
 
     Nodo(int deposito1) {
         this.deposito1 = deposito1;
